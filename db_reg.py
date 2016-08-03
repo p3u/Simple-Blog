@@ -10,7 +10,7 @@ import random
 class UserRegistration():
     """A class to help validation and registration of new users"""
     def __init__(self):
-        self.secret = "AxzOedEirfL"
+        self.secret = "verysecretsecret"
 
     def is_pw_valid(self, pw, pw_conf):
         err_msg = ""
