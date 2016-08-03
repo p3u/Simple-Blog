@@ -3,7 +3,7 @@ import hmac
 
 def hash_string_val(s):
     s = str(s)
-    sc = "YKz8ZasSDeqDkEas"
+    sc = "verysecretsecret"
     return hmac.new(sc, s).hexdigest()
 
 
