@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="new-post-form" action="/write" method="post">
+  <label for="title">Title:</label>
+  <input type="text" name="title" value="{{title}}">
+  <label for="body">Body:</label>
+  <textarea class="post-txtarea" type="textarea" name="body">{{body}}</textarea>
+  <span class="err-msg">{{post_err}}</span>
+  <input type="submit">
+</form>
+{% endblock %}

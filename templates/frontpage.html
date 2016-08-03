@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for post in posts %}
+    <hr>
+    <div class="post-snippets">
+        <a class="post-title" href="{{'/post/' + post.path}}">{{post.title}}</a>
+        <i>by {{post.author}}</i>
+        {% if (post.deleted) %}
+          <p class="deleted-snippet">
+            Deleted post 😞
+          </p>
+        {% else %}
+          <p>
+            {{post.body[0:300]}}
+          </p>
+        {% endif %}
+    </div>
+  {% endfor %}
+{% endblock %}

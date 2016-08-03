@@ -1,0 +1,138 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #5ac42e;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  padding: 5px;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #5ac42e;
+  border-top: 1px solid #5ac42e;
+  padding: 3px;
+}
+
+a:hover {
+  color: #2c8805;
+  border-top: 1px solid #2c8805;
+
+}
+
+hr {
+  background-color: rgba(215, 249, 201, 0.5);
+  border-color: rgba(215, 249, 201, 0.5);
+  color: rgba(215, 249, 201, 0.5);
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.signup-form {
+  max-width: 100%;
+  width: 350px;
+}
+
+.err-msg {
+  display: block;
+  padding: 5px;
+  color: #ff9494
+}
+
+.navigation-bar {
+  position: relative;
+}
+
+button {
+  background-color: #c9e99a;
+  border: none;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  float: right;
+  cursor: pointer;
+}
+
+.user-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.login-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.logged-as {
+  float: right;
+}
+
+.post-title {
+      border-top: 0;
+}
+
+.comment-txtarea {
+  min-height: 80px;
+}
+
+.post-txtarea {
+  min-height: 250px;
+}
+
+.user-new-lines {
+  line-height: 0.25;
+}
+
+.post {
+  min-height: 45vh;
+}
+
+.deleted-msg {
+  color: #ff9494;
+  font-size: 25px;
+}
+
+.deleted-snippet {
+  color: #ff9494;
+}
+
+.undo-deletion_post {
+  float:left;
+}
+
+.go-back-link {
+  border: 0;
+  font-size: 25px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.go-back-link:hover {
+  border: 0;
+}
+
+.delete-post,
+.edit-post {
+  float: right;
+  margin-left: 5px;
+}

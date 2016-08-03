@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="post">
+
+    <h1>{{post.title}}</h1>
+    <b>{{post.author}}</b>
+    <small>{{post.created.strftime("%B, %d - %Y")}}</small>
+    {% if (loggeduser==post.author and not post.deleted) %}
+      <form class="delete-post" action="/confirmation" method="post">
+        <button name="btn-delete" value="{{post.key.urlsafe()}}" type="submit">x</button>
+      </form>
+      <form class="edit-post" action="/edit" method="post">
+        <button name="btn-edit" value="{{post.key.urlsafe()}}" type="submit">Edit</button>
+      </form>
+    {% endif %}
+
+    {% if (post.deleted) %}
+      <p class="deleted-msg">
+        This post was deleted 😞
+        {% if (loggeduser==post.author) %}
+          <form class="undo-deletion_post" action="/confirmation" method="post">
+            <button name="btn-delete" value="{{post.key.urlsafe()}}" type="submit">Undo</button>
+          </form>
+        {% endif %}
+      </p>
+    {% else %}
+      {% for bodyline in post.body.split("\n") %}
+        <p class="user-new-lines">{{bodyline}}</p>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <form class="like-form" action="/like" name="newlike" method="post">
+    <span> {{likes}} people liked this post so far </span>
+    <input type="submit" value="👌 Like">
+    <span class="err-msg">{{likes_err}}</span>
+  </form>
+
+  <form class="comments-form" action="/comment" name="newcomment" method="post">
+    <label for="text">Write your Comment:</label>
+    <span class="err-msg">{{comment_err}}</span>
+    <textarea class="comment-txtarea" name="text">{{comment}}</textarea>
+    <input type="submit">
+  </form>
+
+  <div class="comments-box">
+    <h3>Comments:</h3>
+    {% for comment in comments %}
+      {% if not comment.deleted %}
+        <div class="comment">
+            <b>{{comment.author}}</b>
+            {% if (loggeduser==comment.author) %}
+            <form class="delete-comment" action="/confirmation" method="post">
+              <button name="btn-delete" value="{{comment.key.urlsafe()}}" type="submit">x</button>
+            </form>
+            {% endif %}
+            {% for commentline in comment.text.split("\n") %}
+              <p class="user-new-lines">
+                {{commentline}}
+              </p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}

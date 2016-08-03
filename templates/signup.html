@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Signup:</h1>
+<form class="signup-form" action="/signup" method="post">
+  <label for="username">User Name:</label>
+  <input type="text" name="username" value="{{name}}">
+  <span class="err-msg">{{name_err}}</span>
+  <label for="pw">Password:</label>
+  <input type="password" name="pw" value="">
+  <span class="err-msg">{{pw_err}}</span>
+  <label for="pw-conf">Repeat Your Password</label>
+  <input type="password" name="pw-conf" value="">
+  <input type="submit">
+</form>
+<h1>Or Login:</h1>
+<form class="signup-form" action="/login" method="post">
+  <label for="username">User Name:</label>
+  <input type="text" name="username" value="{{name}}">
+  <label for="pw">Password:</label>
+  <input type="password" name="pw" value="">
+  <span class="err-msg">{{lgn_err}}</span>
+  <input type="submit">
+</form>
+{% endblock %}
