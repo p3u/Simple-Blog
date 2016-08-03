@@ -1,9 +1,9 @@
-# AboutBlank blog
+# about blank blog
 A multiuser blog created for Udacity Fullstack Developer Nanodegree
 
 # Live test
 
-The application is running on Google servers, check [About Blank Blog](http://aboutblankabout.appspot.com) out, and leave your mark there!
+The application is running on Google servers, check [about blank](http://aboutblankabout.appspot.com) out, and leave your mark there!
 
 # If you would like to test it locally:
 
